@@ -1,1 +1,5 @@
 001, John Doe, CHEM:Grade MATH:Grade HIST:grade, GPA
+
+
+ReadFile (StudentID, Name, whileLoop(read spaces and colon), GPA)
+                           //whileLoop stops at comma, determining no more classes
