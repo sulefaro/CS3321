@@ -1,4 +1,5 @@
-# CS3321 !!!
-CS3321 Group - Chang - Software Engineering REPO
+CS3321 Group - Chang - Software Engineering REPO - Fall 2019
+Learning Management System
+Group Members: Joiney Nguyen, Josh Parada, Paulo, Sully 
 
-Add any changes here or use this for Documentation.
+
