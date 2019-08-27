@@ -1,17 +1,21 @@
 //Student
 
-1,John Doe,CS-40101:ABA MATH-30101:BBC, 3.0, doej1, password
+1,John Doe,CS-40101:ABA MATH-30101:BBC,3.0,doej1,password
 
 //Student structure
 
-Student ID
-firstname lastname, 
-//credit hours will help calculate GPA
-Subject (CS) - credit hours (4) course (01) course ID (01): exam grade 1 (A) exam grade 2 (B), exam grade 3 (A),
-GPA
+studentID,
+
+firstName lastName, 
+
+//credit hours will help calculate GPA. course name is in digits but will be matched to its name in source file
+subject (CS) - creditHours (4) courseName (01) courseID (01): examGrade1 (A) examGrade2 (B), examGrade3 (A),
+
+GPA,
+
 //username is last name + first initial + student ID
 username, 
+
 //password will be generated and given to new users
 password 
-
 
