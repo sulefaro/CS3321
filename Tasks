@@ -1,4 +1,5 @@
 GPA Calculator
-Username/Password Login File
-Database (Student ID,Student Name, Year[ex:junior, senior], Classes, Grade, GPA)
-Dictionary of Courses (File Format: 121302, 12 determines a class, 3 determines the credit hours)
+Text Files:
+  Username/Password Login File
+  Database (Student ID,Student Name, Year[ex:junior, senior], Classes, Grade, GPA)
+  Dictionary of Courses (File Format: 121302, 12 determines a class, 3 determines the credit hours)
