@@ -1,10 +1,21 @@
 GPA Calculator
-Text Files:
-  - Username/Password Login File
-  - Database: Student   (Student ID,Student Name, Year[ex:junior, senior], Classes, Grade, GPA)
-            Professor (ID, Name, email, office, specialized subject, courses teaching/taught)
-            Admin     (ID, Name)
-  - Dictionary of Courses (File Format: 1230201, 12 determines subject, 3 determines the credit hours, 02 course name, 01 class number t       because the same course may be taught by another professor)
+Text Files: 
+Username/Password Login File:
+Database: 
+
+*ID can start with 1 = student, 2 = professor, 3 = admin... followed by a '0' for fillers, then remaining numbers will be chronological order of them added to their specific database. ID should always be 6 characters, letting our database have max 99,999 faculty and students combined.
+  
+  Student   (ID, studentFName, studentLName, major, year[ex:junior, senior], course: grade1, grade2, grade3, GPA)
+            Example:  100001, John, Doe, CS, Sophmore, 01130212019:A,B,C, 3.0
+            
+            
+-------------------------------------------            
+Professor (ID, ProfFName, ProfLName, email, office, specializedSubject, courseHist)
+-------------------------------------------
+Admin     (ID, Name)
+
+------------------------------------------
+  Dictionary of Courses (File Format: 1230201, 12 determines subject, 3 determines the credit hours, 02 course name, 01 class number because the same course may be taught by another professor)
 
 Example: CS 1302 Fall 2019
 Convert that into a specific number
