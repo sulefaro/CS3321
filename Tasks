@@ -1,10 +1,10 @@
 GPA Calculator
 Text Files:
-  Username/Password Login File
-  Database: Student   (Student ID,Student Name, Year[ex:junior, senior], Classes, Grade, GPA)
+  - Username/Password Login File
+  - Database: Student   (Student ID,Student Name, Year[ex:junior, senior], Classes, Grade, GPA)
             Professor (ID, Name, email, office, specialized subject, courses teaching/taught)
             Admin     (ID, Name)
-  Dictionary of Courses (File Format: 1230201, 12 determines subject, 3 determines the credit hours, 02 course name, 01 class number t       because the same course may be taught by another professor)
+  - Dictionary of Courses (File Format: 1230201, 12 determines subject, 3 determines the credit hours, 02 course name, 01 class number t       because the same course may be taught by another professor)
 
 Example: CS 1302 Fall 2019
 Convert that into a specific number
