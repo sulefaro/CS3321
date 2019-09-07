@@ -122,21 +122,21 @@ int main()
 	{
 		courseName = "SENIOR PROJECT IN CS";
 	}
-	else if (courseName == "2305")
+	else if (courseName == "2305"  && subject == "MATH")
 	{
-		courseName = "DISCRETE MATHEMATICS" && subject == "MATH";
+		courseName = "DISCRETE MATHEMATICS";
 	}
-	else if (courseName == "2307")
+	else if (courseName == "2307"  && subject == "MATH")
 	{
-		courseName = "LINEAR ALGEBRA" && subject == "MATH";
+		courseName = "LINEAR ALGEBRA";
 	}
-	else if (courseName == "2401")
+	else if (courseName == "2401" && subject == "MATH")
 	{
-		courseName = "CALCULUS I" && subject == "MATH";
+		courseName = "CALCULUS I";
 	}
-	else if (courseName == "2402")
+	else if (courseName == "2402" && subject == "MATH")
 	{
-		courseName = "CALCULUS II" && subject == "MATH";
+		courseName = "CALCULUS II";
 	}
 	else if (courseName == "3302" && subject == "MATH")
 	{
