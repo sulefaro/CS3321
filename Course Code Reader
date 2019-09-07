@@ -1,0 +1,178 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main()
+{
+	string subject;
+	string courseName;
+	string semester;
+	string year;
+
+	string courseCode = "10332112019";
+
+	//places course code in string stream 1
+	stringstream ss(courseCode);
+	stringstream ss2;
+
+	char tempChar;
+
+	//to know position of code to clear string stream 2 when done with each field
+	int count = 0;
+
+
+	//string stream 1 inserts in tempChar char by char
+	while (ss >> tempChar)
+	{
+		
+		ss2 << tempChar;
+
+		//count = 1, is when subject ends
+		if (count == 1)
+		{
+			ss2 >> subject;
+			//clears string stream 2 to prep for next field
+			ss2.clear();
+		}
+		//count = 5, is when course name ends
+		if (count == 5)
+		{
+			ss2 >> courseName;
+			ss2.clear();
+		}
+		//count = 6, is when semester ends
+		if (count == 6)
+		{
+			ss2 >> semester;
+			ss2.clear();
+		}
+		//count = 10, is when year ends
+		if (count == 10)
+		{
+			ss2 >> year;
+			ss2.clear();
+		}
+
+		count += 1;
+
+	}
+	
+	//SUBJECT
+	if (subject == "10")
+	{
+		subject = "CS";
+	}
+	else if (subject == "11")
+	{
+		subject = "MATH";
+	}
+	else if (subject == "12")
+	{
+		subject = "TCOM";
+	}
+	
+	//COURSE NAME
+	if (courseName == "1410" && subject == "CS")
+	{
+		courseName = "INTRO TO CS WITH C++";
+	}
+	else if (courseName == "2301" && subject == "CS")
+	{
+		courseName = "INTRO TO COMPUTER ORGANIZATION";
+	}
+	else if (courseName == "2302" && subject == "CS")
+	{
+		courseName = "DIGITAL LOGIC";
+	}
+	else if (courseName == "2410" && subject == "CS")
+	{
+		courseName = "INTRO TO DATA STRUCTURES AND ALGORITHMS";
+	}
+	else if (courseName == "3304" && subject == "CS")
+	{
+		courseName = "DATA AND INFORMATION STRUCTURES";
+	}
+	else if (courseName == "3306" && subject == "CS")
+	{
+		courseName = "INTRO TO THEORY COMPUTATION";
+	}
+	else if (courseName == "3321" && subject == "CS")
+	{
+		courseName = "SOFTWARE ENGINEERING";
+	}
+	else if (courseName == "4294" && subject == "CS")
+	{
+		courseName = "SENIOR SEMINAR";
+	}
+	else if (courseName == "4303" && subject == "CS")
+	{
+		courseName = "PROGRAMMING LANGUAGE CONCEPTS";
+	}
+	else if (courseName == "4315" && subject == "CS")
+	{
+		courseName = "OPERATING SYSTEMS";
+	}
+	else if (courseName == "4318" && subject == "CS")
+	{
+		courseName = "DATABASE SYSTEMS";
+	}
+	else if (courseName == "4395" && subject == "CS")
+	{
+		courseName = "SENIOR PROJECT IN CS";
+	}
+	else if (courseName == "2305")
+	{
+		courseName = "DISCRETE MATHEMATICS" && subject == "MATH";
+	}
+	else if (courseName == "2307")
+	{
+		courseName = "LINEAR ALGEBRA" && subject == "MATH";
+	}
+	else if (courseName == "2401")
+	{
+		courseName = "CALCULUS I" && subject == "MATH";
+	}
+	else if (courseName == "2402")
+	{
+		courseName = "CALCULUS II" && subject == "MATH";
+	}
+	else if (courseName == "3302" && subject == "MATH")
+	{
+		courseName = "PROBABILITY AND STATISTICS";
+	}
+	else if (courseName == "3302" && subject == "TCOM")
+	{
+		courseName = "BUSINESS AND TECHNICAL REPORT WRITING";
+	}
+
+
+
+	//SEMESTER
+	if (semester == "1")
+	{
+		semester = "SPRING";
+	}
+	else if (semester == "2")
+	{
+		semester = "SUMMER";
+	}
+	else if (semester == "3")
+	{
+		semester = "FALL";
+	}
+	else if (semester == "4")
+	{
+		semester = "WINTER";
+	}
+
+	cout << "Subject: " << subject << endl;
+	cout << "Course Name: " << courseName << endl;
+	cout << "Semester: " << semester << endl;
+	cout << "Year: " << year << endl;
+
+	return 0;
+
+}
+
