@@ -1,0 +1,63 @@
+string editSubject(string newSubject, string &courseCode)
+{
+	string subject;
+	string courseName;
+	string semester;
+	string year;
+	stringstream ss(courseCode);
+	stringstream ss2;
+	char tempChar;
+
+	int count = 0;
+
+	while (ss >> tempChar)
+	{
+		
+		ss2 << tempChar;
+
+		//count = 1, is when subject ends
+		if (count == 1)
+		{
+			ss2.clear();
+		}
+		//count = 5, is when course name ends
+		if (count == 5)
+		{
+			ss2 >> courseName;
+			ss2.clear();
+		}
+		//count = 6, is when semester ends
+		if (count == 6)
+		{
+			ss2 >> semester;
+			ss2.clear();
+		}
+		//count = 10, is when year ends
+		if (count == 10)
+		{
+			ss2 >> year;
+			ss2.clear();
+		}
+
+		count += 1;
+
+	}
+
+
+	if(newSubject == "CS")
+	{
+		subject = "10";
+	}
+	else if (newSubject == "MATH")
+	{
+		subject = "11";
+	}
+	else if (newSubject == "TCOM")
+	{
+		subject = "12";
+	}
+
+	courseCode = subject + courseName + semester + year;
+
+	return courseCode;
+}
