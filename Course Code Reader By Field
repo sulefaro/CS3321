@@ -1,0 +1,234 @@
+string getSubject(string courseCode)
+{
+	string subject;
+	stringstream ss(courseCode);
+	stringstream ss2;
+	char tempChar;
+
+	int count = 0;
+
+	//string stream 1 inserts in tempChar char by char
+	while (ss >> tempChar)
+	{
+		ss2 << tempChar;
+
+		//count = 1, is when subject ends
+		if (count == 1)
+		{
+			ss2 >> subject;
+			break;
+		}
+
+		count += 1;
+	}
+	
+	//SUBJECTS
+	if (subject == "10")
+	{
+		subject = "CS";
+	}
+	else if (subject == "11")
+	{
+		subject = "MATH";
+	}
+	else if (subject == "12")
+	{
+		subject = "TCOM";
+	}
+
+	return subject;
+}
+
+
+
+string getCourseName(string courseCode)
+{
+	string courseName;
+	string subject;
+	stringstream ss(courseCode);
+	stringstream ss2;
+	char tempChar;
+
+	int count = 0;
+
+	//string stream 1 inserts in tempChar char by char
+	while (ss >> tempChar)
+	{
+		ss2 << tempChar;
+
+		//count = 1, is when subject ends
+		if (count == 1)
+		{
+			ss2 >> subject;
+			ss2.clear();
+		}
+
+		if(count == 5)
+		{
+			ss2 >> courseName;
+			break;
+		}
+	
+		count += 1;
+	}
+	
+	//COURSE NAMES
+	if (courseName == "1410" && subject == "CS")
+	{
+		courseName = "INTRO TO CS WITH C++";
+	}
+	else if (courseName == "2301" && subject == "CS")
+	{
+		courseName = "INTRO TO COMPUTER ORGANIZATION";
+	}
+	else if (courseName == "2302" && subject == "CS")
+	{
+		courseName = "DIGITAL LOGIC";
+	}
+	else if (courseName == "2410" && subject == "CS")
+	{
+		courseName = "INTRO TO DATA STRUCTURES AND ALGORITHMS";
+	}
+	else if (courseName == "3304" && subject == "CS")
+	{
+		courseName = "DATA AND INFORMATION STRUCTURES";
+	}
+	else if (courseName == "3306" && subject == "CS")
+	{
+		courseName = "INTRO TO THEORY COMPUTATION";
+	}
+	else if (courseName == "3321" && subject == "CS")
+	{
+		courseName = "SOFTWARE ENGINEERING";
+	}
+	else if (courseName == "4294" && subject == "CS")
+	{
+		courseName = "SENIOR SEMINAR";
+	}
+	else if (courseName == "4303" && subject == "CS")
+	{
+		courseName = "PROGRAMMING LANGUAGE CONCEPTS";
+	}
+	else if (courseName == "4315" && subject == "CS")
+	{
+		courseName = "OPERATING SYSTEMS";
+	}
+	else if (courseName == "4318" && subject == "CS")
+	{
+		courseName = "DATABASE SYSTEMS";
+	}
+	else if (courseName == "4395" && subject == "CS")
+	{
+		courseName = "SENIOR PROJECT IN CS";
+	}
+	else if (courseName == "2305"  && subject == "MATH")
+	{
+		courseName = "DISCRETE MATHEMATICS";
+	}
+	else if (courseName == "2307"  && subject == "MATH")
+	{
+		courseName = "LINEAR ALGEBRA";
+	}
+	else if (courseName == "2401" && subject == "MATH")
+	{
+		courseName = "CALCULUS I";
+	}
+	else if (courseName == "2402" && subject == "MATH")
+	{
+		courseName = "CALCULUS II";
+	}
+	else if (courseName == "3302" && subject == "MATH")
+	{
+		courseName = "PROBABILITY AND STATISTICS";
+	}
+	else if (courseName == "3302" && subject == "TCOM")
+	{
+		courseName = "BUSINESS AND TECHNICAL REPORT WRITING";
+	}
+
+	return courseName;
+}
+
+
+string getSemester(string courseCode)
+{
+	string semester;
+	stringstream ss(courseCode);
+	stringstream ss2;
+	char tempChar;
+
+	int count = 0;
+
+	//string stream 1 inserts in tempChar char by char
+	while (ss >> tempChar)
+	{
+		ss2 << tempChar;
+
+		//count = 1, is when subject ends
+		if (count == 5)
+		{
+			ss2.clear();
+		}
+
+		if(count == 6)
+		{
+			ss2 >> semester;
+			break;
+		}
+
+		count += 1;
+	}
+	
+	//SEMESTER
+	if (semester == "1")
+	{
+		semester = "SPRING";
+	}
+	else if (semester == "2")
+	{
+		semester = "SUMMER";
+	}
+	else if (semester == "3")
+	{
+		semester = "FALL";
+	}
+	else if (semester == "4")
+	{
+		semester = "WINTER";
+	}
+
+	return semester;
+}
+
+
+string getYear(string courseCode)
+{
+	string year;
+	stringstream ss(courseCode);
+	stringstream ss2;
+	char tempChar;
+
+	int count = 0;
+
+	//string stream 1 inserts in tempChar char by char
+	while (ss >> tempChar)
+	{
+		ss2 << tempChar;
+
+		//count = 1, is when subject ends
+		if (count == 6)
+		{
+			ss2.clear();
+		}
+
+		if(count == 10)
+		{
+			ss2 >> year;
+			break;
+		}
+
+		count += 1;
+	}
+	
+	return year;
+}
