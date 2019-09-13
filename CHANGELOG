@@ -2,3 +2,5 @@ Change Log
 Format: * Date: - Write explicity what changes were made, # insert name 
 
 * Date: 09/10/19 - Change Log created #Suleman Farooqi
+* Date: 09/12/19 - Dissected Course Code Reader to read by specific field
+                 - Added a Course Code Editor by field
