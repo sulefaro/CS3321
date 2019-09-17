@@ -1,0 +1,11 @@
+comolid2	defaultpass23	0	Dante Comolli
+kornbrot1	defaultpass23	0	Lula Kornbrot
+arms3		defaultpass23	0	Sly Arm
+melitaa2	defaultpass23	0	asha Melita
+clewsm1		defaultpass23	0	Marco Clews
+rizzil2		defaultpass23	0	Lurette Rizzi
+shannonk3	defaultpass23	0	Kristofor Shannon
+strehlowd1	defaultpass23	0	Del Strehlow
+framptong2	defaultpass23	0	Gradeigh Frampton
+driessee2	defaultpass23	0	Elspeth Driesse
+townsleye3	defaultpass23	1	Ermin Townsley //Admin
