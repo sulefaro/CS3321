@@ -1,9 +1,41 @@
+Tasks needed to be completed:
+
+- Login screen needs to be finished, both in terms of GUI and framework.
+  Clicking on login will check for username and password from loginPass.txt and take the user to "Database - Student" form
+  or take it to "Database - Admin" form which will allow the admin to edit the files.
+  First we'll work on the sutdent database since it is easier, all we need to do is display the correct line and information
+  on the screen. 
+  
+  How it will work?
+  
+  User enters username and password, program reads the text file, look for the username and scans that entire line.
+  The line contains the password associated with that username, so the program will scan the next word in that line.
+  Once the program matches the username and password to be correct, it will check if that user is a admin or student,
+  that will be done by a '0' or a '1' which will be saved into a variable and take it to the next form accordingly.
+  
+  - Things we can do later
+    Add a delay to the login button after multiple attempt failures
+    Send password reset link via email
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////!!!!COMPLETED TASKS!!!!////////////////////////////////////////////////////////////////
 GPA Calculator
 Text Files: 
 Username/Password Login File:
 Database: 
 
-*ID can start with 1 = student, 2 = professor, 3 = admin... followed by a '0' for fillers, then remaining numbers will be chronological order of them added to their specific database. ID should always be 6 characters, letting our database have max 99,999 faculty and students combined.
+*ID can start with 1 = student, 2 = professor, 3 = admin... followed by a '0' for fillers, then remaining numbers will 
+be chronological order of them added to their specific database. ID should always be 6 characters, letting our database
+have max 99,999 faculty and students combined.
   
   Student   (ID, studentFName, studentLName, major, year[ex:junior, senior], course: grade1, grade2, grade3, GPA)
             Example:  100001, John, Doe, CS, Sophmore, 01130212019:A,B,C, 3.0
@@ -15,7 +47,8 @@ Professor (ID, ProfFName, ProfLName, email, office, specializedSubject, courseHi
 Admin     (ID, Name)
 
 ------------------------------------------
-  Dictionary of Courses (File Format: 1230201, 12 determines subject, 3 determines the credit hours, 02 course name, 01 class number because the same course may be taught by another professor)
+  Dictionary of Courses (File Format: 1230201, 12 determines subject, 3 determines the credit hours, 02 course name, 01 class number
+  because the same course may be taught by another professor)
 
 Example: CS 1302 Fall 2019
 Convert that into a specific number
