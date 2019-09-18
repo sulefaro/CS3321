@@ -1,0 +1,15 @@
+====UHD Database.zip===
+
+This zip consists of the base framework for this database. As of right now it has three main windows, login screen(Login.h), 
+admin screen(adminFormDB.h) and student screen(studentFormDB.h), the last two will show the database in some fashion.
+
+*** Make sure you download CLI on your visual studio, without that this will not run or you won't be able to edit it ***
+*** Go to your visual studio installer and through go to individual components, select all the options that have CLI in them***
+
+As of right now, the login button does not work, which will take the inputs of the two text boxes. I'll upload the code separately
+which will be Login.cpp on github so you don't have to upload the entire project for updates.
+
+Once you run the program, there are two things that work
+1. Password textbox shows all letters as asterisks when input is put in
+2. Forgot password button takes you to UHD password reset site. 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
