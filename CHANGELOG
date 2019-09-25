@@ -9,4 +9,8 @@ Format: * Date: - Write explicity what changes were made, # insert name
 * Date: 09/17/19 - loginPass.txt added to repository, includes all usernames and passwords for students
                    0 and 1 determines whether it has admin priviliges #Suleman Farooqi
                    
-* Date: 09/18/19 - UHD Database.zip uploaded to repository, includes the basic framework for the GUI System #Suleman Farooqi                
+* Date: 09/18/19 - UHD Database.zip uploaded to repository, includes the basic framework for the GUI System #Suleman Farooqi      
+
+* Date: 09/25/19 - Created login source code.
+                   Deleted first name and last name from login textfile
+                   Created student textfile #Joiney Nguyen
