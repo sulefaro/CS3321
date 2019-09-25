@@ -137,15 +137,13 @@ string getStudentLine(string usernameEntered)
 	string currentStudentLine;
 	string currentUsernameInLine;
 	string delimiter = "	";
-
-	bool studentFound = false;
-
+	
 	int pos;
 
 	ifstream studentFile;
 	studentFile.open("student.txt");
 
-	while (getline(studentFile, currentStudentLine) && studentFound == false)
+	while (getline(studentFile, currentStudentLine) )
 	{
 		pos = currentStudentLine.find(delimiter);
 
@@ -153,7 +151,7 @@ string getStudentLine(string usernameEntered)
 
 		if (usernameEntered == currentUsernameInLine)
 		{
-			studentFound = true;
+			break;
 		}
 
 	}
