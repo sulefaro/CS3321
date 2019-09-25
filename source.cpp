@@ -23,7 +23,8 @@ int main()
 	string studentLine;
 	string userFirstName;
 	string accessPath = "2";
-
+	
+	//types login info
 	cout << "Username: " << endl;
 	cin >> usernameEntered;
 	cout << "Password: " << endl;
@@ -34,7 +35,7 @@ int main()
 
 	string currentLoginLine;
 	
-
+	//goes through login file to match username entered
 	while (getline(loginFile, currentLoginLine) && accessPath == "2")
 	{
 		accessPath = loginAccessPath(currentLoginLine, usernameEntered, passwordEntered);
@@ -42,18 +43,21 @@ int main()
 
 	loginFile.close();
 
+	//gives non-admin mode.
 	if (accessPath == "0")
 	{
-		//accesses non-admin mode.
+		
 		studentLine = getStudentLine(usernameEntered);
 		userFirstName = getStudentFirstName(studentLine);
 		
 	}
+	//accesses admin mode.
 	else if (accessPath == "1")
 	{
-		//accesses admin mode.
+		
 		cout << "You are admin, " << usernameEntered << endl;
 	}
+	//denies access
 	else if (accessPath == "2")
 	{
 		cout << "Sorry the username/password is invalid." << endl;
@@ -69,7 +73,7 @@ int main()
 	
 }
 
-//deem username goes to non-admin/admin mode, or denies access
+//decides if user goes to non-admin/admin mode, or denies access
 string loginAccessPath(string currentLoginLine, string usernameEntered, string passwordEntered)
 {
 	
@@ -160,6 +164,7 @@ string getStudentLine(string usernameEntered)
 
 }
 
+//to get student first name from their matched line in file
 string getStudentFirstName(string currentStudentLine)
 {
 	string delimiter = "	";
