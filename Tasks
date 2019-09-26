@@ -17,6 +17,7 @@ Tasks needed to be completed:
     Add a delay to the login button after multiple attempt failures
     Send password reset link via email
     Implement an encryption method for textfile security
+    9/25/2019 We need to redo textfile by having any whitespace separate fields and not just one tab. This is because formatting can look unorganized in textfile.
 
 
 
