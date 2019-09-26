@@ -1,9 +1,9 @@
 comolid2	Dante	Comollide
 kornbrot1	Lula	Kornbrot
-arms3		Sly	Arm
+arms3	Sly	Arm
 melitaa2	Asha	Melita
-clewsm1		Marco	Clews
-rizzil2		Lurette	Rizzi
+clewsm1	Marco	Clews
+rizzil2	Lurette	Rizzi
 shannonk3	Kristofor	Shannon
 strehlowd1	Del	Strehlow
 framptong2	Gradeigh	Frampton
