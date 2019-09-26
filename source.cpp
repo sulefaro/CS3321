@@ -14,6 +14,7 @@ using namespace std;
 string loginAccessPath(string currentLoginLine, string usernameEntered, string passwordEntered);
 string getStudentLine(string usernameEntered);
 string getStudentFirstName(string currentStudentLine);
+string getStudentLastName(string currentStudentLine);
 
 
 int main()
@@ -22,6 +23,7 @@ int main()
 	string passwordEntered;
 	string studentLine;
 	string userFirstName;
+	string userLastName;
 	string accessPath = "2";
 	
 	//types login info
@@ -49,6 +51,7 @@ int main()
 		
 		studentLine = getStudentLine(usernameEntered);
 		userFirstName = getStudentFirstName(studentLine);
+		userLastName = getStudentLastName(studentLine);
 		
 	}
 	//accesses admin mode.
@@ -63,11 +66,7 @@ int main()
 		cout << "Sorry the username/password is invalid." << endl;
 	}
 	
-	cout << "Welcome to UHD's blackboard, " << userFirstName << endl;
-
-	cout << "Student line: " << studentLine << endl;
-	cout << "User's first name: " << userFirstName << endl;
-	cout << "Accessd path: " << accessPath << endl;
+	cout << "Welcome to UHD's blackboard, " << userFirstName << " " << userLastName << endl;
 
 	return 0;
 	
@@ -87,7 +86,7 @@ string loginAccessPath(string currentLoginLine, string usernameEntered, string p
 	
 	
 	int pos;
-	int count = 0;
+	int tabCount = 0;
 
 	while (splitComplete == false)
 	{
@@ -95,19 +94,19 @@ string loginAccessPath(string currentLoginLine, string usernameEntered, string p
 
 		currentString = currentLoginLine.substr(0, pos);
 
-		if (count == 0)
+		if (tabCount == 0)
 		{
 			username = currentString;
-			count += 1;
+			tabCount += 1;
 		}
 
-		else if (count == 1)
+		else if (tabCount == 1)
 		{
 			password = currentString;
-			count += 1;
+			tabCount += 1;
 		}
 
-		else if (count == 2)
+		else if (tabCount == 2)
 		{
 			isAdmin = currentString;
 
@@ -171,7 +170,7 @@ string getStudentFirstName(string currentStudentLine)
 	
 	bool splitComplete = false;
 	int pos;
-	int count = 0;
+	int tabCount = 0;
 
 	
 	while (splitComplete == false)
@@ -180,7 +179,7 @@ string getStudentFirstName(string currentStudentLine)
 
 		currentString = currentStudentLine.substr(0, pos);
 
-		if (count == 1)
+		if (tabCount == 1)
 		{
 			studentFirstName = currentString;
 			splitComplete = true;
@@ -188,9 +187,41 @@ string getStudentFirstName(string currentStudentLine)
 
 		currentStudentLine.erase(0, pos + delimiter.length());
 
-		count += 1;
+		tabCount += 1;
 
 	}
 
 	return studentFirstName;
+}
+
+string getStudentLastName(string currentStudentLine)
+{
+	string delimiter = "	";
+	string currentString;
+	string studentLastName;
+
+	bool splitComplete = false;
+	int pos;
+	int tabCount = 0;
+
+
+	while (splitComplete == false)
+	{
+		pos = currentStudentLine.find(delimiter);
+
+		currentString = currentStudentLine.substr(0, pos);
+
+		if (tabCount == 2)
+		{
+			studentLastName = currentString;
+			splitComplete = true;
+		}
+
+		currentStudentLine.erase(0, pos + delimiter.length());
+
+		tabCount += 1;
+
+	}
+
+	return studentLastName;
 }
