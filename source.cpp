@@ -10,11 +10,21 @@ Suleman Farooqi
 
 using namespace std;
 
-
+//decides if user goes to non-admin/admin mode, or denies access
 string loginAccessPath(string currentLoginLine, string usernameEntered, string passwordEntered);
+//to get the correct line in student file that matches username 
 string getStudentLine(string usernameEntered);
+//to get student first name from their matched line in file
 string getStudentFirstName(string currentStudentLine);
+//to get student last name from their matched line in file
 string getStudentLastName(string currentStudentLine);
+//to get the correct line in student file that matches username
+string getAdminLine(string usernameEntered);
+//to get admin first name from their matched line in file
+string getAdminFirstName(string currentAdminLine);
+//to get admin last name from their matched line in file
+string getAdminLastName(string currentAdminLine);
+
 
 
 int main()
@@ -22,8 +32,11 @@ int main()
 	string usernameEntered;
 	string passwordEntered;
 	string studentLine;
-	string userFirstName;
-	string userLastName;
+	string adminLine;
+	string studentFirstName;
+	string studentLastName;
+	string adminFirstName;
+	string adminLastName;
 	string accessPath = "2";
 	
 	//types login info
@@ -50,15 +63,20 @@ int main()
 	{
 		
 		studentLine = getStudentLine(usernameEntered);
-		userFirstName = getStudentFirstName(studentLine);
-		userLastName = getStudentLastName(studentLine);
+		studentFirstName = getStudentFirstName(studentLine);
+		studentLastName = getStudentLastName(studentLine);
+		
+		cout << "Welcome to UHD's blackboard (Non-Admin Mode), " << studentFirstName << " " << studentLastName << endl;
 		
 	}
 	//accesses admin mode.
 	else if (accessPath == "1")
 	{
+		adminLine = getAdminLine(usernameEntered);
+		adminFirstName = getAdminFirstName(adminLine);
+		adminLastName = getAdminLastName(adminLine);
 		
-		cout << "You are admin, " << usernameEntered << endl;
+		cout << "Welcome to UHD's blackboard (Admin Mode), " << adminFirstName << " " << adminLastName << endl;
 	}
 	//denies access
 	else if (accessPath == "2")
@@ -66,13 +84,10 @@ int main()
 		cout << "Sorry the username/password is invalid." << endl;
 	}
 	
-	cout << "Welcome to UHD's blackboard, " << userFirstName << " " << userLastName << endl;
-
-	return 0;
-	
+	return 0;	
 }
 
-//decides if user goes to non-admin/admin mode, or denies access
+
 string loginAccessPath(string currentLoginLine, string usernameEntered, string passwordEntered)
 {
 	
@@ -130,7 +145,6 @@ string loginAccessPath(string currentLoginLine, string usernameEntered, string p
 	return accessPath;
 }
 
-//to get the correct line in student file matching username 
 string getStudentLine(string usernameEntered)
 {
 	string currentStudentLine;
@@ -161,7 +175,7 @@ string getStudentLine(string usernameEntered)
 
 }
 
-//to get student first name from their matched line in file
+
 string getStudentFirstName(string currentStudentLine)
 {
 	string delimiter = "	";
@@ -224,4 +238,98 @@ string getStudentLastName(string currentStudentLine)
 	}
 
 	return studentLastName;
+}
+
+string getAdminLine(string usernameEntered)
+{
+	string currentAdminLine;
+	string currentUsernameInLine;
+	string delimiter = "	";
+
+	int pos;
+
+	ifstream adminFile;
+	adminFile.open("admin.txt");
+
+	while (getline(adminFile, currentAdminLine))
+	{
+		pos = currentAdminLine.find(delimiter);
+
+		currentUsernameInLine = currentAdminLine.substr(0, pos);
+
+		if (usernameEntered == currentUsernameInLine)
+		{
+			break;
+		}
+
+	}
+
+	adminFile.close();
+
+	return currentAdminLine;
+
+}
+
+string getAdminFirstName(string currentAdminLine)
+{
+	string delimiter = "	";
+	string currentString;
+	string adminFirstName;
+
+	bool splitComplete = false;
+	int pos;
+	int tabCount = 0;
+
+
+	while (splitComplete == false)
+	{
+		pos = currentAdminLine.find(delimiter);
+
+		currentString = currentAdminLine.substr(0, pos);
+
+		if (tabCount == 1)
+		{
+			adminFirstName = currentString;
+			splitComplete = true;
+		}
+
+		currentAdminLine.erase(0, pos + delimiter.length());
+
+		tabCount += 1;
+
+	}
+
+	return adminFirstName;
+}
+
+string getAdminLastName(string currentAdminLine)
+{
+	string delimiter = "	";
+	string currentString;
+	string adminLastName;
+
+	bool splitComplete = false;
+	int pos;
+	int tabCount = 0;
+
+
+	while (splitComplete == false)
+	{
+		pos = currentAdminLine.find(delimiter);
+
+		currentString = currentAdminLine.substr(0, pos);
+
+		if (tabCount == 2)
+		{
+			adminLastName = currentString;
+			splitComplete = true;
+		}
+
+		currentAdminLine.erase(0, pos + delimiter.length());
+
+		tabCount += 1;
+
+	}
+
+	return adminLastName;
 }
