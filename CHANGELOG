@@ -14,3 +14,6 @@ Format: * Date: - Write explicity what changes were made, # insert name
 * Date: 09/25/19 - Created login source code.
                    Deleted first name and last name from login textfile
                    Created student textfile #Joiney Nguyen
+                   
+* Date: 09/30/19 - UHD Project Version 2.zip uploaded to repository, includes the basic framework for the GUI System
+                   Deleted UHD Database because it's the old version #Suleman Farooqi 
