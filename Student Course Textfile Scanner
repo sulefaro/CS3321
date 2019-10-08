@@ -1,0 +1,86 @@
+string getStudentCourseHistory(string usernameEntered)
+{
+	string username;
+	string allCourses;
+	string currentCourseFileLine;
+	string courses[];
+	string delimiter = "	";
+	int pos;
+
+	ifstream studentCourseFile;
+	studentCourseFile.open("studentCourseFile.txt");
+
+	while (getline(studentCourseFile, currentCourseFileLine))
+	{
+		pos = currentCourseFileLine.find(delimiter);
+		//puts only username of that line in variable username
+		username = currentCourseFileLine.substr(0, pos);
+
+		if (usernameEntered == username)
+		{
+			//deletes username
+			currentCourseFileLine.erase(0, pos + delimiter.length());
+			//puts remainder of line with only courses in allCourses variable
+			allCourses = currentCourseFileLine;
+
+			break;
+		}
+	}
+
+	return allCourses;
+}
+
+string getStudentCourse1(string *allCourses)
+{
+	string course1;
+	string delimiter = "	";
+	int pos;
+
+	pos = *allCourses.find(delimiter);
+
+	course1 = *allCourses.substr(0,pos);
+
+	*allCourses.erase(0, pos + delimiter.length());
+
+	return course1;
+
+}
+
+string getStudentCourse2(string *allCourses)
+{
+	string course2;
+	string delimiter = "	";
+	int pos;
+
+	pos = *allCourses.find(delimiter);
+
+	course2 = *allCourses.substr(0,pos);
+
+	*allCourses.erase(0, pos + delimiter.length());
+
+	return course2;
+}
+
+string getStudentCourse3(string *allCourses)
+{
+	string course3;
+	string delimiter = "	";
+	int pos;
+
+	pos = *allCourses.find(delimiter);
+
+	course3 = *allCourses.substr(0,pos);
+
+	*allCourses.erase(0, pos + delimiter.length());
+
+	return course3;
+}
+
+string getStudentCourse4(string *allCourses)
+{
+	string course4;
+
+	course4 = *allCourses;
+
+	return course4;
+}
