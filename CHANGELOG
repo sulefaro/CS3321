@@ -18,4 +18,5 @@ Format: * Date: - Write explicity what changes were made, # insert name
 * Date: 09/30/19 - UHD Project Version 2.zip uploaded to repository, includes the basic framework for the GUI System
                    Deleted UHD Database because it's the old version #Suleman Farooqi 
                    
-* Date: 10/8/19 - Removed first and last name field from student course databse textfile since it won't be needed. #Joiney Nguyen
+* Date: 10/8/19 - Removed first and last name field from student course databse textfile since it won't be needed. 
+                  Re-did course code reader for more efficiency. Replaced stringstreams with substring function. #Joiney Nguyen
