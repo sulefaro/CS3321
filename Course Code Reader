@@ -6,58 +6,17 @@ using namespace std;
 
 int main()
 {
-	string subject;
-	string courseName;
-	string semester;
-	string year;
+	string subject, courseName, semester, year, grade;
+	string courseCode = "10332112019A";
+	
+	subject = courseCode.substr(0,1);
+	courseName = courseCode.substr(2,5);
+	semester = courseCode[6];
+	year = courseCode.substr(7,10);
+	grade = courseCode[11];
 
-	string courseCode = "10332112019";
-
-	//places course code in string stream 1
-	stringstream ss(courseCode);
-	stringstream ss2;
-
-	char tempChar;
-
-	//to know position of code to clear string stream 2 when done with each field
-	int count = 0;
-
-
-	//string stream 1 inserts in tempChar char by char
-	while (ss >> tempChar)
-	{
-		
-		ss2 << tempChar;
-
-		//count = 1, is when subject ends
-		if (count == 1)
-		{
-			ss2 >> subject;
-			//clears string stream 2 to prep for next field
-			ss2.clear();
-		}
-		//count = 5, is when course name ends
-		if (count == 5)
-		{
-			ss2 >> courseName;
-			ss2.clear();
-		}
-		//count = 6, is when semester ends
-		if (count == 6)
-		{
-			ss2 >> semester;
-			ss2.clear();
-		}
-		//count = 10, is when year ends
-		if (count == 10)
-		{
-			ss2 >> year;
-			ss2.clear();
-		}
-
-		count += 1;
-
-	}
+	
+	
 	
 	//SUBJECT
 	if (subject == "10")
