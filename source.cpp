@@ -90,16 +90,16 @@ int main()
 
 string loginAccessPath(string currentLoginLine, string usernameEntered, string passwordEntered)
 {
-	
+
 	string delimiter = "	";
 	string currentString;
 	string username, password;
 	string isAdmin;
-	string accessPath;
+	int accessPath;
 
 	bool splitComplete = false;
-	
-	
+
+
 	int pos;
 	int tabCount = 0;
 
@@ -132,18 +132,45 @@ string loginAccessPath(string currentLoginLine, string usernameEntered, string p
 
 	}
 
-	if (usernameEntered == username && passwordEntered == password)
+	if (usernameEntered == username && passwordEntered == password && isAdmin == "0")
 	{
-		accessPath = isAdmin;
-		
+		accessPath = 0;
+
+	}
+	else if(usernameEntered == username && passwordEntered == password && isAdmin == "1")
+	{
+		accessPath = 1;
 	}
 	else
 	{
-		accessPath = "2";
+		accessPath = 2;
 	}
 
 	return accessPath;
 }
+
+//LOGIN DATABASE
+int loginDatabase(string usernameEntered, string passwordEntered)
+{
+	string currentLoginLine;
+	int accessPath = 2;
+
+	ifstream loginFile;
+	loginFile.open("login.txt");
+
+	while (getline(loginFile, currentLoginLine) && accessPath == 2)
+	{
+		accessPath = loginAccessPath(currentLoginLine, usernameEntered, passwordEntered);
+	}
+	
+	return accessPath;
+}
+
+
+
+
+
+
 
 string getStudentLine(string usernameEntered)
 {
