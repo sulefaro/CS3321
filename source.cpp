@@ -87,8 +87,8 @@ int main()
 	return 0;	
 }
 
-
-string loginAccessPath(string currentLoginLine, string usernameEntered, string passwordEntered)
+//Takes in the current line of the login file, parses the current line into a username and password variable, and then compares it to the username and password entered.
+int loginAccessPath(string currentLoginLine, string usernameEntered, string passwordEntered)
 {
 
 	string delimiter = "	";
