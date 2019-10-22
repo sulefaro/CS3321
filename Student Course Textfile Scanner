@@ -3,7 +3,6 @@ string getStudentCourseHistory(string usernameEntered)
 	string username;
 	string allCourses;
 	string currentCourseFileLine;
-	string courses[];
 	string delimiter = "	";
 	int pos;
 
