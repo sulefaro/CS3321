@@ -2,7 +2,7 @@
 Tasks needed to be completed:
 
 Finish Student Screen
-- Get studentID from previous screen (Login.h or Login.cpp) and initiliaze it studentForm.h
+- Get studentID(student username) from previous screen (Login.h or Login.cpp) and initiliaze it studentForm.h
 - make a search function that will look for the line where the student ID belongs
   How? Get entire line that contains that studentID
 - Create function that will split 10 digit code into a String courseCode and read until end of line
