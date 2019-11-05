@@ -1,17 +1,16 @@
+
 Tasks needed to be completed:
 
-- Login screen needs to be finished, both in terms of GUI and framework.
-  Clicking on login will check for username and password from loginPass.txt and take the user to "Database - Student" form
-  or take it to "Database - Admin" form which will allow the admin to edit the files.
-  First we'll work on the sutdent database since it is easier, all we need to do is display the correct line and information
-  on the screen. 
-  
-  How it will work?
-  
-  User enters username and password, program reads the text file, look for the username and scans that entire line.
-  The line contains the password associated with that username, so the program will scan the next word in that line.
-  Once the program matches the username and password to be correct, it will check if that user is a admin or student,
-  that will be done by a '0' or a '1' which will be saved into a variable and take it to the next form accordingly.
+Finish Student Screen
+- Get studentID from previous screen (Login.h or Login.cpp) and initiliaze it studentForm.h
+- make a search function that will look for the line where the student ID belongs
+  How? Get entire line that contains that studentID
+- Create function that will split 10 digit code into a String courseCode and read until end of line
+- Inside that function previously made, we need to create another function inside which will split the courseCode accordingly
+  with the courseCodeReader function (which we also have to implement)
+- Once the information is split into variables that we created in the previous function, there will be a insert function
+  which will add the information to the table
+
   
   - Things we can do later
     Add a delay to the login button after multiple attempt failures
@@ -30,6 +29,23 @@ Tasks needed to be completed:
 
 
 ////////////////////////////////////!!!!COMPLETED TASKS!!!!////////////////////////////////////////////////////////////////
+
+
+- Login screen needs to be finished, both in terms of GUI and framework.
+  Clicking on login will check for username and password from loginPass.txt and take the user to "Database - Student" form
+  or take it to "Database - Admin" form which will allow the admin to edit the files.
+  First we'll work on the sutdent database since it is easier, all we need to do is display the correct line and information
+  on the screen. 
+  
+  How it will work?
+  
+  User enters username and password, program reads the text file, look for the username and scans that entire line.
+  The line contains the password associated with that username, so the program will scan the next word in that line.
+  Once the program matches the username and password to be correct, it will check if that user is a admin or student,
+  that will be done by a '0' or a '1' which will be saved into a variable and take it to the next form accordingly.
+  
+  
+  ////////////////////////////////////////
 GPA Calculator
 Text Files: 
 Username/Password Login File:
