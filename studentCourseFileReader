@@ -1,0 +1,196 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	string usernameEntered = "comolid2";
+	string currentCourseFileLine;
+	string delimiter = "	";
+	string currentStringBlock;
+	string subject, courseName, semester, year, grade;
+	int pos;
+	bool endOfLine = false;
+
+	fstream courseFile;
+
+	courseFile.open("studentCourseFile.txt");
+
+	//finding correct line with matching username.
+	while (getline(courseFile, currentCourseFileLine))
+	{
+		pos = currentCourseFileLine.find(delimiter);
+
+		currentStringBlock = currentCourseFileLine.substr(0, pos);
+
+		if (currentStringBlock == usernameEntered)
+		{
+			break;
+		}
+	}
+
+	courseFile.close();
+
+	//deletes username from line and returns line with only courses.
+	currentCourseFileLine.erase(0, pos + delimiter.size());
+
+	ofstream expandedCourseOutput;
+
+	expandedCourseOutput.open("expandedCourseOutput.txt");
+
+	while (endOfLine == false)
+	{
+		pos = currentCourseFileLine.find(delimiter);
+		
+		if (pos != string::npos)
+		{
+			currentStringBlock = currentCourseFileLine.substr(0, pos);
+		}
+		else if (pos == string::npos)
+		{
+			endOfLine = true;
+
+			currentStringBlock = currentCourseFileLine.substr(0, currentCourseFileLine.size());
+		}
+
+		cout << currentStringBlock << endl;
+		cout << "size is: " << currentStringBlock.size() << endl;
+
+		for (int j = 0; j < currentStringBlock.size(); j++)
+		{
+			cout << "[" << j << "]" << currentStringBlock[j] << endl;
+		}
+
+		subject = currentStringBlock.substr(0, 2);
+		courseName = currentStringBlock.substr(2, 4);
+		semester = currentStringBlock.substr(6,1);
+		year = currentStringBlock.substr(7, 4);
+		grade = currentStringBlock.substr(11,1);
+
+		//SUBJECT
+		if (subject == "10")
+		{
+			subject = "CS";
+		}
+		else if (subject == "11")
+		{
+			subject = "MATH";
+		}
+		else if (subject == "12")
+		{
+			subject = "TCOM";
+		}
+
+		//COURSE NAME
+		if (courseName == "1410" && subject == "CS")
+		{
+			courseName = "INTRO TO CS WITH C++";
+		}
+		else if (courseName == "2301" && subject == "CS")
+		{
+			courseName = "INTRO TO COMPUTER ORGANIZATION";
+		}
+		else if (courseName == "2302" && subject == "CS")
+		{
+			courseName = "DIGITAL LOGIC";
+		}
+		else if (courseName == "2410" && subject == "CS")
+		{
+			courseName = "INTRO TO DATA STRUCTURES AND ALGORITHMS";
+		}
+		else if (courseName == "3304" && subject == "CS")
+		{
+			courseName = "DATA AND INFORMATION STRUCTURES";
+		}
+		else if (courseName == "3306" && subject == "CS")
+		{
+			courseName = "INTRO TO THEORY COMPUTATION";
+		}
+		else if (courseName == "3321" && subject == "CS")
+		{
+			courseName = "SOFTWARE ENGINEERING";
+		}
+		else if (courseName == "4294" && subject == "CS")
+		{
+			courseName = "SENIOR SEMINAR";
+		}
+		else if (courseName == "4303" && subject == "CS")
+		{
+			courseName = "PROGRAMMING LANGUAGE CONCEPTS";
+		}
+		else if (courseName == "4315" && subject == "CS")
+		{
+			courseName = "OPERATING SYSTEMS";
+		}
+		else if (courseName == "4318" && subject == "CS")
+		{
+			courseName = "DATABASE SYSTEMS";
+		}
+		else if (courseName == "4395" && subject == "CS")
+		{
+			courseName = "SENIOR PROJECT IN CS";
+		}
+		else if (courseName == "2305" && subject == "MATH")
+		{
+			courseName = "DISCRETE MATHEMATICS";
+		}
+		else if (courseName == "2307" && subject == "MATH")
+		{
+			courseName = "LINEAR ALGEBRA";
+		}
+		else if (courseName == "2401" && subject == "MATH")
+		{
+			courseName = "CALCULUS I";
+		}
+		else if (courseName == "2402" && subject == "MATH")
+		{
+			courseName = "CALCULUS II";
+		}
+		else if (courseName == "3302" && subject == "MATH")
+		{
+			courseName = "PROBABILITY AND STATISTICS";
+		}
+		else if (courseName == "3302" && subject == "TCOM")
+		{
+			courseName = "BUSINESS AND TECHNICAL REPORT WRITING";
+		}
+
+		//SEMESTER
+		if (semester == "1")
+		{
+			semester = "SPRING";
+		}
+		else if (semester == "2")
+		{
+			semester = "SUMMER";
+		}
+		else if (semester == "3")
+		{
+			semester = "FALL";
+		}
+		else if (semester == "4")
+		{
+			semester = "WINTER";
+		}
+
+		expandedCourseOutput << "Subject: " << subject << endl;
+		expandedCourseOutput << "Course Name: " << courseName << endl;
+		expandedCourseOutput << "Semester: " << semester << endl;
+		expandedCourseOutput << "Year: " << year << endl;
+		expandedCourseOutput << "Grade: " << grade << endl;
+		expandedCourseOutput << "----------------------------------------" << endl;
+
+		currentCourseFileLine.erase(0, pos + delimiter.size());
+
+		
+
+		
+	}
+	
+	expandedCourseOutput.close();
+
+	system("pause");
+	return 0;
+}
