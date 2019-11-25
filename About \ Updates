@@ -13,3 +13,8 @@ Once you run the program, there are two things that work
 1. Password textbox shows all letters as asterisks when input is put in
 2. Forgot password button takes you to UHD password reset site. 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+====Schoolsystem.zip==
+
+This zip contains the new program runned by netbeans with MySQL as backend.
+Make sure to download "database_dump" zip as well to import into MySQL before running.
